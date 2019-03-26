@@ -1,9 +1,15 @@
 package com.walloniahotel.eventsapp.controller;
 
 import com.walloniahotel.eventsapp.domain.QuoteRequest;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class QuoteRequestManagementController {
@@ -65,5 +71,22 @@ public class QuoteRequestManagementController {
         //We must implement a save of all of the form bean information
 
         return "quoteRequestDetail";
+    }
+
+    @ModelAttribute
+    public void addCommonAttributes(@RequestParam String eventType, Model model){
+
+        String customMessage = "Your are viewing requests for " + eventType;
+
+        model.addAttribute("eventTypeMessage", customMessage);
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        dateFormat.setLenient(false);
+
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 }
