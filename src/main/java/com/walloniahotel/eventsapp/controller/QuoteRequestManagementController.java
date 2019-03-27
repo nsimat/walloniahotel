@@ -30,7 +30,7 @@ public class QuoteRequestManagementController {
 
         //We must refer to quoteId in next implementation
         QuoteRequest quoteRequestBean = new QuoteRequest();
-        quoteRequestBean.setBugjet(500);
+        quoteRequestBean.setBudget(500);
         quoteRequestBean.setEventType("wedding");
 
         ModelAndView mav = new ModelAndView();
@@ -53,7 +53,7 @@ public class QuoteRequestManagementController {
         return returnViewName;
     }
 
-    @GetMapping
+    /*@GetMapping
     @ResponseBody
     public QuoteRequest viewQuoteApi(){
 
@@ -62,8 +62,7 @@ public class QuoteRequestManagementController {
         quoteRequest.setBugjet(56000);
 
         return quoteRequest;
-
-    }
+    }*/
 
     @PostMapping("/quoteDetail")
     public String updateQuoteRequest(@ModelAttribute QuoteRequest formBean) {

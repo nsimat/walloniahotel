@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class QuoteRequestController {
 
-    @GetMapping
+    @GetMapping(value = "/newQuote")
     public String beginQuoteRequest(Model model){
         //Must add implementation later
+
+        model.addAttribute("quoteRequestForm", new QuoteRequest());
+
 
         return "newQuote";
     }
 
-    @PostMapping
+    @PostMapping(value = "/newQuote")
     public String submitQuoteRequest(@ModelAttribute QuoteRequest formBean){
 
         //Must add implementation later

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Wallonia Hotel</title>
+</head>
+<body>
+<header id="intro">
+    <article class="fullheight">
+        <div class="hgroup">
+            <h1>Wallonia Hotel</h1>
+            <h2>City of Namur</h2>
+            <p><a href="#welcome"><img th:src="@{/images/hotel2.jpg}" alt="down arrow"></a></p>
+        </div>
+    </article>
+    <nav id="nav">
+        <div class="navbar">
+            <div class="brand"><a href="#welcome">Wallonia <span>Hotel</span></a></div>
+            <ul>
+                <li><a class="icon info" href="#hotelinfo"><span>info</span></a></li>
+                <li><a class="icon rooms" href="#rooms"><span>rooms</span></a></li>
+                <li><a class="icon dining" href="#dining"><span>dining</span></a></li>
+                <li><a class="icon events" href="#events"><span>events</span></a></li>
+                <li><a class="icon attractions" href="#attractions"><span>attractions</span></a></li>
+            </ul>
+        </div><!-- navbar -->
+    </nav>
+</header>
+<p>Get your greeting <a href="/newQuote">Get a new quote.</a></p>
+</body>
+</html>

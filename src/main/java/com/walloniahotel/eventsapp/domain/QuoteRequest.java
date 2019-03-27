@@ -22,7 +22,7 @@ public class QuoteRequest {
     private boolean needsCustomFloralDesign;
     private boolean needsCustomDecor;
 
-    private int bugjet;
+    private int budget;
 
     public Customer getCustomer() {
         return customer;
@@ -160,11 +160,11 @@ public class QuoteRequest {
         this.needsCustomDecor = needsCustomDecor;
     }
 
-    public int getBugjet() {
-        return bugjet;
+    public int getBudget() {
+        return budget;
     }
 
-    public void setBugjet(int bugjet) {
-        this.bugjet = bugjet;
+    public void setBudget(int bugjet) {
+        this.budget = bugjet;
     }
 }
